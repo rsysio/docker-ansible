@@ -1,10 +1,12 @@
 FROM python:2-alpine
 
 RUN set -ex \
-    && apk add --no-cache make \
+    && apk add --no-cache \
+        libffi \
+        libffi-dev \
     && apk add --no-cache --virtual .build-deps  \
         gcc \
-        libffi-dev \
+        make \
         gdbm-dev \
         libc-dev \
         openssl \
